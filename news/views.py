@@ -8,6 +8,12 @@ def welcome(request):
 def news_of_day(request):
     date = dt.date.today()
 
+
+def past_days_news(request,past_date):
+        # Converts data from the string Url
+        date = dt.datetime.strptime(past_date,'%Y-%m-%d').date()
+
+        
     day = convert_dates(date)
     html = f'''
         <html>
